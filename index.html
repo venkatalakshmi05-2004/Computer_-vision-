@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <title>Computer Vision | Face & Gesture Detection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand-mark">CV</div>
+      <div><p class="eyebrow">AI • COMPUTER VISION</p><h1>Face & Gesture Detection</h1></div>
+    </header>
+
+    <section class="intro">
+      <h2>See your camera in action</h2>
+      <p>Detect faces and estimate hand gestures in real time using your phone camera.</p>
+    </section>
+
+    <section class="camera-card" aria-label="Camera preview">
+      <div class="video-wrap" id="videoWrap">
+        <video id="video" autoplay playsinline muted></video>
+        <canvas id="overlay"></canvas>
+        <div class="camera-placeholder" id="placeholder">
+          <div class="camera-icon">◉</div>
+          <strong>Camera is not running</strong>
+          <span>Tap Start Camera and allow camera access.</span>
+        </div>
+        <div class="live-pill" id="livePill"><span></span> LIVE</div>
+      </div>
+      <div class="controls">
+        <button id="startBtn" class="primary">Start Camera</button>
+        <button id="stopBtn" class="secondary" disabled>Stop</button>
+        <button id="flipBtn" class="secondary" disabled aria-label="Switch camera">Switch</button>
+      </div>
+      <p class="status" id="status" role="status">Ready. Start the camera to begin.</p>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card"><span class="stat-icon">☺</span><div><span class="stat-label">Faces detected</span><strong id="faceCount">0</strong></div></article>
+      <article class="stat-card"><span class="stat-icon">✋</span><div><span class="stat-label">Hands detected</span><strong id="handCount">0</strong></div></article>
+    </section>
+
+    <section class="results-card">
+      <div class="section-heading"><h2>Gesture results</h2><span class="tag">LIVE ANALYSIS</span></div>
+      <div id="gestureResults" class="gesture-results"><p class="empty">No hands detected yet.</p></div>
+    </section>
+
+    <section class="tip"><strong>Tips for better detection</strong><ul><li>Keep your face and hand inside the camera frame.</li><li>Use good lighting and a simple background.</li><li>Show your palm clearly to the camera.</li></ul></section>
+    <footer>Computer Vision Gesture & Face Detection · Python project web edition</footer>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
